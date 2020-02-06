@@ -43,6 +43,8 @@ def get_pet_labels(image_dir):
    
     # Retrieve the filenames from folder pet_images/
     filename_list = listdir(image_dir)
+    #filtering files starting with '.'
+    filename_list = list(filter(lambda x: x[0] != '.', filename_list))
     pet_labels=[]
     # Print 10 of the filenames from folder pet_images/
     print("\nPrints 10 filenames from folder pet_images/")
