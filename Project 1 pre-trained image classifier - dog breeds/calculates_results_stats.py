@@ -94,10 +94,9 @@ def calculates_results_stats(results_dic):
         if results_dic[key][3] == 1 and results_dic[key][2] == 1:
             n_correct_breeds += 1
         
-        
     pct_corr_non_dogs = 0
+    n_img_non_dog = n_imgs - n_img_dog
     if n_img_non_dog != 0:
-        n_img_non_dog = n_imgs - n_img_dog
         pct_corr_non_dogs = n_correct_non_dogs/n_img_non_dog * 100
         
         
