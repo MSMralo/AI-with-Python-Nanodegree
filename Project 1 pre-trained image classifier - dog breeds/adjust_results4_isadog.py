@@ -83,25 +83,30 @@ def adjust_results4_isadog(results_dic, dogfile):
         for key in results_dic:
             res_img = 0
             res_class = 0
-            
+            # saving classifier breeds elements in a list after spliting elements
             classi_list = results_dic[key][1]
             classi_list = classi_list.split(", ")
             
+            #iterating through file lines
             for lines in file_dog_names:
+                #spliting each line and save as a list
                 lines = lines.split(", ")
-                
-                for names in lines:                    
+                #iterating through each line elements
+                for names in lines:  
+                    #checking if images label exist in line elements
                     if results_dic[key][0] == names:
                         res_img = 1
                         
-                        
+                #iterating through each line elements
                 for name in lines:       
+                    #itering through classifier breed elements
+                    #and comparing them with the file line elements
                     for elements in classi_list:
                         if elements == name:
                             res_class = 1
                             
                         
-                            
+            #adding comparison result to the result_dic               
             results_dic[key].extend([res_img, res_class])
             
             
